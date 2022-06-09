@@ -14,21 +14,21 @@ int main()
         cin >> arr[i];
     }
 
-    for(int i=0;i<n-1;i++)
+    for (int i = 1; i < n; i++)
     {
-        for(int j=i+1;j<n;j++)
+        int current = arr[i];
+        int j=i-1;
+        while (arr[j] > current && j>=0)
         {
-            if(arr[j]<arr[i]){
-                int temp=arr[j];
-                arr[j]=arr[i];
-                arr[i]=temp;
-            }
+            arr[j+1] = arr[j];
+            j--;
         }
+        arr[j+1]=current;
     }
 
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
     return 0;
 }
