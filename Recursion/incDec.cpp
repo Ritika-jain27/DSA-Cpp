@@ -12,10 +12,22 @@ void dec(int n)
     cout << n << " ";
     dec(n - 1);
 }
+
+void inc(int n)
+{
+    if (n == 0)
+    {
+        return;
+    }
+    inc(n-1);
+    cout << n << " ";
+}
 int main()
 {
     int n;
     cin >> n;
     dec(n);
+    cout<<endl;
+    inc(n);
     return 0;
 }
